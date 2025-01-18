@@ -83,7 +83,7 @@ return [
     */
 
     'locale' => 'en',
-
+     'avilable_locales'=>['en','ar'],
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
