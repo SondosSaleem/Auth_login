@@ -48,8 +48,10 @@ return response()->json([
 
 }
 
-   public function logout(){
+   public function logout(Request $request){
+    $request ->user()->currentAccessToken()->delete();
 
+ return response()->json(['message'=>'log out successfully']);
    }
 
 
