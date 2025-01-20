@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Support\Facades\Config; 
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $encryptedPassword = config('mail.mailers.smtp.password'); // كلمة المرور المشفرة من الإعدادات
+        $decryptedPassword = base64_decode($encryptedPassword); // فك التشفير
+    
+        // تحديث إعدادات SMTP
+        Config::set('mail.mailers.smtp.password', $decryptedPassword);
     }
 }

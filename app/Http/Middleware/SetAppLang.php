@@ -17,16 +17,15 @@ class SetAppLang
      */
     public function handle(Request $request, Closure $next)
     {
-        
         $locale = $request->segment(2);
-        if (! in_array($locale, config('app.avilable_locales'))) {
+        
+        if (!in_array($locale, config('app.available_locales',[]))) {
             abort(400); 
         }
-        
-        App::setLocale($locale);
 
-        
-        return $next($request);
+        App::setLocale($locale); 
+
+        return $next($request); 
     }
+}
 
-};

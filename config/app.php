@@ -82,8 +82,8 @@ return [
     |
     */
 
-    'locale' => 'en',
-     'avilable_locales'=>['en','ar'],
+    'locale' => 'en', // default language
+   ' available_locales' => ['en', 'ar'],
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
